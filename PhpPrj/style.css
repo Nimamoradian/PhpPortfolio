@@ -1,0 +1,78 @@
+Body{
+
+	background-color: #000040;
+	color:WHITE;
+	
+ }
+.header{
+	background-color:#000040;
+}
+
+footer{
+	background-color:#000000 ;
+	text-align: center;
+	border-top: 4px solid WHITE;
+     border-radius: 12px;
+
+}
+.bcolor{
+     background-color: #000000; 
+      border-bottom: 4px solid WHITE;
+      border-radius: 12px;
+}
+article{
+	 height:700px;
+     border-top: 2px solid #7300b7;
+	 
+}
+
+.profile{
+	background-color : #400040;
+	padding: 40px;
+	
+	
+}
+h1{
+	font-style: italic;
+	font-family: cursive;
+}
+.profinput{
+	border-radius: 5px;
+	background-color: #591e37; 
+}
+.key{
+	margin: 20px;
+}
+.sub{
+	padding: 30px;
+	
+}
+.sidenav {
+	font-size:20px;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #400000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 70px;
+    text-align: center;
+    border-radius: 12px;
+    		border-left: 3px solid WHITE;
+    
+    
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+.input2{
+	    background-color: #ffc4c4;
+		border-radius: 5px;
+		color: #000000;
+	
+}
+
