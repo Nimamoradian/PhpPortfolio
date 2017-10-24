@@ -22,7 +22,7 @@
 		      </div>
 
 		      <div class="item">
-		        <img src="Includes/img/html.jpg" alt="html" style="width:100%;">
+		        <img src="Includes/img/Js.jpg" alt="html" style="width:100%;">
 		        <div class="carousel-caption">
 		          <h2>JavaScript</h2>
 		          <p><small> JavaScript is a scripting language that can help programmer to create a dynamic website.</small></p>

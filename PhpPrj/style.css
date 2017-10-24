@@ -15,6 +15,17 @@ footer{
      border-radius: 12px;
 
 }
+.icon{
+	text-align: center;
+	color: BLACK;
+	font-weight:bold;
+	
+}
+a.icon:hover{
+	background-color: #8c8c00;
+	
+	
+}
 .bcolor{
      background-color: #000000; 
       border-bottom: 4px solid WHITE;
@@ -24,6 +35,19 @@ article{
 	 height:700px;
      border-top: 2px solid #7300b7;
 	 
+}
+.coursepg{
+	background-color : #002424;
+	padding: 40px;
+	
+	
+	
+}
+.divider1{
+	height:85%;
+	background-color: #004040;
+	border-radius: 20px;
+	
 }
 
 .profile{

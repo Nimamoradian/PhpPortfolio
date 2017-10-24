@@ -3,7 +3,7 @@
         <ul class="nav navbar-nav">
             <li><a onclick="myFunction()"><i class="fa fa-list-ul" aria-hidden="true"></i></a></li>
             <li class="hideMenu"><a href="#home">Home</a></li>
-            <li class="hideMenu"><a href="#profile">Your Profile</a></li>
+            <li class="hideMenu" title="This menu shows when you loged on"><a href="#profile" >Your Profile</a></li>
             <li class="hideMenu"><a href="#courses">Courses</a></li>
         </ul>
         <form class="navbar-form navbar-right hideMenu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
