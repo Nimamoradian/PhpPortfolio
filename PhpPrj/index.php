@@ -8,7 +8,7 @@ include 'Includes/Functions/config.php';
 //--  --------------------------------------------------SLIDESHOW --------------------------------------->
 include 'Includes/Layouts/slideshow.php';?>
 <!--   --------------------------------------------------Profile page ---------------------------------------> -->
-<article class="profile" id="profile" <?php echo $disabled?>>
+<article class="profile" id="profile" <?php //echo $disabled?> >
 	
         	<h1> YOUR PROFILE</h1>
         	
@@ -51,7 +51,7 @@ include 'Includes/Layouts/slideshow.php';?>
 			<p id="Message"></p>
 			
 		</div>
-        <div class="sub">
+        <div class="sub" >
         <div >	
         	<h3>Your User Name:</h3>
         	<p>"<?php echo $_session['Username']?>"</p>

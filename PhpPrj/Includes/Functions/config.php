@@ -7,7 +7,7 @@ $disabled="hidden";
 $nameErr ="";
 $name = "";
 
- $_session["Username"]=$_session["age"]=$_session["phone"]=$_session["email"]='Please login';
+$_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_session["name"]='Please login';
 
     
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
