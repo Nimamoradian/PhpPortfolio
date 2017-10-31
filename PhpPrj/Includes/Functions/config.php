@@ -7,7 +7,7 @@ $notloged="";
 $nameErr ="";
 $name = "";
 
-$_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_session["name"]='Please login';
+$_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_session["name"]='';
 
     
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -52,7 +52,7 @@ $_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_
             
              
              if (mysqli_query($connection, $insQuery)) {
-                 echo "Record updated successfully";
+                 echo "alert('Record updated successfully');";
              } else {
                  echo "Error updating record: " . mysqli_error($connection);
               }
