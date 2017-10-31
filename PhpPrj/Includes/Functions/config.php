@@ -2,8 +2,8 @@
 	
 <?php
 
-$disabled="hidden";
-
+$logedin="hidden";
+$notloged="";
 $nameErr ="";
 $name = "";
 
@@ -33,7 +33,8 @@ $_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_
                          $_session["email"]=$row['email'];
                          $_session["id"]=$row['id'];
                          
-                         $disabled="";
+                         $logedin="";
+                         $notloged="hidden";
                          $nameErr="";
                      }
                  } else {
@@ -61,6 +62,9 @@ $_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_
                  $_session["name"]=$_POST['PName'];
                   $_session["email"]=$_POST['PEmail'];
                   $_session["id"]= $_POST['PId'];
+                  $logedin="";
+                  $notloged="hidden";
+                  
          }
      }
 }
