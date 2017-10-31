@@ -11,33 +11,59 @@ $_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_
 
     
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     session_start();
-     $_session["Username"]=$_POST["user"];
-       $_session["Password"]=$_POST["password"];
-       
-       if (empty($_session["Username"]) || empty($_session["Password"])) {
-            $nameErr = "Incorrect user or password";
-        } else{
-            $query = "SELECT * FROM users WHERE Username ='". $_session["Username"] ."'" ;
-            $result = mysqli_query($connection, $query);
+     if (isset($_POST["buttonStatus"])){
+         if ($_POST["buttonStatus"]== "login"){
+             session_start();
+             $_session["Username"]=$_POST["user"];
+             $_session["Password"]=$_POST["password"];
+             if (empty($_session["Username"]) || empty($_session["Password"])) {
+                 $nameErr = "Incorrect user or password";
+             } else{
+                 $query = "SELECT * FROM users WHERE Username ='". $_session["Username"] ."'" ;
+                 $result = mysqli_query($connection, $query);
+                 
+                 if (mysqli_num_rows($result) > 0) {
+                     
+                     $row = mysqli_fetch_assoc($result);
+                     
+                     if ($_session["Password"] == $row["password"] ){
+                         $_session["age"]=$row['age'];
+                         $_session["phone"]=$row['phone'];
+                         $_session["name"]=$row['name'];
+                         $_session["email"]=$row['email'];
+                         $_session["id"]=$row['id'];
+                         
+                         $disabled="";
+                         $nameErr="";
+                     }
+                 } else {
+                     $nameErr = "Incorrect user or password";
+                 }
+             }
+         } else if ($_POST["buttonStatus"]== "changeprofile"){
+             
+             $insQuery ="UPDATE users SET 
+                        name='".htmlspecialchars($_POST['PName'])."'
+                        ,age=".htmlspecialchars($_POST['PAge'])."
+                        ,phone=".htmlspecialchars( $_POST['PPhone'])."
+                        ,email='".htmlspecialchars($_POST['PEmail'])."'
+                         WHERE id=".$_POST['PId'];
             
-            if (mysqli_num_rows($result) > 0) {
-
-                $row = mysqli_fetch_assoc($result);
-                
-                if ($_session["Password"] == $row["password"] ){
-                   $_session["age"]=$row['age'];
-                   $_session["phone"]=$row['phone'];
-                   $_session["name"]=$row['name'];
-                   $_session["email"]=$row['email'];
-                   $disabled="";
-                   $nameErr="Welcome ".$_session["name"];
-                }
-            } else {
-                $nameErr = "Incorrect user or password";
-            }
-          }
-        }
+             
+             if (mysqli_query($connection, $insQuery)) {
+                 echo "Record updated successfully";
+             } else {
+                 echo "Error updating record: " . mysqli_error($connection);
+              }
+              session_start();
+                 $_session["age"]=$_POST['PAge'];
+                 $_session["phone"]=$_POST['PPhone'];
+                 $_session["name"]=$_POST['PName'];
+                  $_session["email"]=$_POST['PEmail'];
+                  $_session["id"]= $_POST['PId'];
+         }
+     }
+}
 
         
 function test_input($data) {
@@ -76,5 +102,6 @@ function readcourses(){
     }
     
 }
+
 
 ?>

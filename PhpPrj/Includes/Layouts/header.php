@@ -4,7 +4,9 @@
 <head>
 	<meta charset="ISO-8859-1">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	  <meta name="author" content="Nima Moradianzadeh">
+	  <meta name="keywords" content="Sql, Programming language, javascript, tutorial, learning, web development">
+	  <meta name="discription" content="This is a website for those people who are interested to learn new programming lnaguages.";>
 	<title>Daily Programming</title>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

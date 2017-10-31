@@ -31,25 +31,22 @@ include 'Includes/Layouts/slideshow.php';?>
        
        <div id="changeprofSlide" class="sidenav">
 			<h1>Edit YOur Profile Password</h1>
-			
-        	<p>Your Name</p>
-        	<input  id="profileCName" class="input2" type="text" value="<?php echo $_session['name']?>" placeholder="Your Name">*
-			<p>Your Age</p>
-        	<input  id="profileCAge" class="input2" type="text" value="<?php echo $_session['age']?>" placeholder="Your Age">*
-			<p>Your Phone Number</p>
-        	<input  id="profileCPhone" class="input2" type="text" value="<?php echo $_session['phone']?>" placeholder="Your Phone Number">
-			<p>Your Email Address</p>
-        	<input  id="profileCEmail" class="input2" type="text" value="<?php echo $_session['email']?>" placeholder="Your Email Address">*
-			
-			
-			
-        	
-        	
-        	<button class="btn btn-primary key" onclick="closeNav('changeprofSlide');">Cancel </button>
-		   	<button class="btn btn-primary key" onclick="formValidation();">Save </button>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">	
+            	<p>Your Name</p>
+            	<input  id="profileCid" class="input2" type="text" value="<?php echo $_session['id']?>" name="PId" placeholder="Your Name" hidden>
+            	
+            	<input  id="profileCName" class="input2" type="text" value="<?php echo $_session['name']?>" name="PName" placeholder="Your Name">*
+    			<p>Your Age</p>
+            	<input  id="profileCAge" class="input2" type="text" value="<?php echo $_session['age']?>" name="PAge" placeholder="Your Age">*
+    			<p>Your Phone Number</p>
+            	<input  id="profileCPhone" class="input2" type="text" value="<?php echo $_session['phone']?>" name="PPhone" placeholder="Your Phone Number">
+    			<p>Your Email Address</p>
+            	<input  id="profileCEmail" class="input2" type="text" value="<?php echo $_session['email']?>" name="PEmail" placeholder="Your Email Address">*
+    		   	<button class="btn btn-primary key" name="buttonStatus" value="changeprofile">Save </button>
+				<button class="btn btn-primary key" onclick="closeNav('changeprofSlide');">Cancel </button>
+			</form>
 			<hr>
 			<p id="Message"></p>
-			
 		</div>
         <div class="sub" >
         <div >	
@@ -58,6 +55,7 @@ include 'Includes/Layouts/slideshow.php';?>
         		
         	
         	<h3>Your Name:</h3>
+        	
         	<input class="profinput" type="text" value="<?php echo $_session['name']?>"  disabled>
         	<br>
         	<h3>Your Age:</h3>

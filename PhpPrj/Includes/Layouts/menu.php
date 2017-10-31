@@ -7,16 +7,17 @@
             <li class="hideMenu"><a href="#courses">Courses</a></li>
         </ul>
         <form class="navbar-form navbar-right hideMenu" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-        	<p class='text-danger'><?php
-
-echo $nameErr;
-?>
+        	<p class='text-danger'><?php echo $nameErr;?>
             <input type="text" class="form-control"  name="user" placeholder="Username"  >
-            <input type="password" class="form-control"  name="password" placeholder="Password"  >
+            <input type="password" class="form-control"  name="password" placeholder="Password" >
             
             
-            <button class="btn btn-primary" type="submit">
+            <button title="login" class="btn btn-primary" name="buttonStatus" value="login" type="submit">
 				<span class="glyphicon glyphicon-log-in"></span> 
+      	    </button>
+      	    <button title="Create a new user"class="btn btn-primary" type="submit" >
+					<span class="glyphicon glyphicon-plus-sign"></span>
+
       	    </button>
         
         </p>

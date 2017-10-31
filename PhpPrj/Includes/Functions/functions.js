@@ -22,6 +22,7 @@ function openNav(id) {
 
 function closeNav(id) {
     document.getElementById(id).style.width = "0";
+    
 }
 
 
