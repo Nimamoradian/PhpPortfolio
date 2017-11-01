@@ -8,7 +8,7 @@ include 'Includes/Functions/config.php';
 //--  --------------------------------------------------SLIDESHOW --------------------------------------->
 include 'Includes/Layouts/slideshow.php';?>
 <!--   --------------------------------------------------Profile page ---------------------------------------> -->
-<article class="profile" id="profile" <?php echo $logedin?> >
+<article class="profile" id="profile"  style="display:<?php echo $logedin?>"  >
 	
         	<h1> YOUR PROFILE</h1>
 <!--  ----------------------------------      Change Password Slide bar ---------------------------	 -->
@@ -47,7 +47,8 @@ include 'Includes/Layouts/slideshow.php';?>
         <div class="sub">
             <div >	
             	<h3>Your User Name:</h3>
-            	<p>"<?php echo $_session['Username']?>"</p>
+            	<input class="profinput" type="text" value="<?php echo $_session['Username']?>"  disabled>
+            	</p>
             	<h3>Your Name:</h3>
             	<input class="profinput" type="text" value="<?php echo $_session['name']?>"  disabled>
             	<br>
@@ -67,7 +68,7 @@ include 'Includes/Layouts/slideshow.php';?>
 		</div>	
 </article>
 <!--  registreation form -->
-<article class="profile" id="register" <?php echo $notloged?>>
+<article class="profile" id="Registeration" style="display:<?php echo $notloged?>">
         <h1> Registeration form</h1>
 
 	 <div class="sub"  id="changeprofSlide" class="sidenav">

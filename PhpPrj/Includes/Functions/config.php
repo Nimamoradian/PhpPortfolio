@@ -2,7 +2,7 @@
 	
 <?php
 
-$logedin="hidden";
+$logedin="none";
 $notloged="";
 $nameErr ="";
 $name = "";
@@ -12,6 +12,7 @@ $_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_
     
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
      if (isset($_POST["buttonStatus"])){
+//  -------------------------------------        if press login button
          if ($_POST["buttonStatus"]== "login"){
              session_start();
              $_session["Username"]=$_POST["user"];
@@ -34,13 +35,15 @@ $_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_
                          $_session["id"]=$row['id'];
                          
                          $logedin="";
-                         $notloged="hidden";
+                         $notloged="none";
                          $nameErr="";
                      }
                  } else {
                      $nameErr = "Incorrect user or password";
                  }
              }
+         
+//  if Change profile button clicked        
          } else if ($_POST["buttonStatus"]== "changeprofile"){
              
              $insQuery ="UPDATE users SET 
@@ -63,13 +66,16 @@ $_session["Username"]= $_session["age"]=$_session["phone"]=$_session["email"]=$_
                   $_session["email"]=$_POST['PEmail'];
                   $_session["id"]= $_POST['PId'];
                   $logedin="";
-                  $notloged="hidden";
+                  $notloged="none";
                   
          }
+         
      }
 }
 
         
+
+
 function test_input($data) {
   $data = trim($data);  
   $data = stripslashes($data);
@@ -101,9 +107,7 @@ function readcourses(){
                  "<div class='col-xs-1'></div>"   ;
             echo  $course;
         }
-    } else {
-        echo "0 results";
-    }
+    } 
     
 }
 
